@@ -61,6 +61,12 @@ public class InlinedMethodCallers {
             {"android.app.LoadedApk", "makeApplicationInner", Boolean.TYPE, Instrumentation.class, Boolean.TYPE},
             {"android.app.Instrumentation", "newApplication", ClassLoader.class, String.class, Context.class},
             {"android.app.Instrumentation", "newApplication", ClassLoader.class, Context.class},
+
+            // callers of Instrumentation#newApplication(ClassLoader, String, Context)
+            {"android.app.LoadedApk", "makeApplicationInner", Boolean.TYPE, Instrumentation.class, Boolean.TYPE},
+            {"android.app.LoadedApk", "makeApplicationInner", Boolean.TYPE, Instrumentation.class},
+            {"android.app.LoadedApk", "makeApplication", Boolean.TYPE, Instrumentation.class},
+
             {"android.app.ContextImpl", "getSharedPreferencesPath", String.class}
     };
 
