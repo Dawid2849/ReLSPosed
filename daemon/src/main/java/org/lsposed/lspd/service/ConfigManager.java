@@ -1227,6 +1227,8 @@ public class ConfigManager {
                     .collect(Collectors.toList());
             } catch (Throwable e) {
                 Log.e(TAG, "get denylist", e);
+            } finally {
+                DenylistManager.clearFd();
             }
         }
         return result;
